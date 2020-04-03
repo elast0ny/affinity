@@ -1,4 +1,4 @@
-# shared_memory
+# Affinity
 
 [![crates.io](https://img.shields.io/crates/v/affinity.svg)](https://crates.io/crates/affinity)
 [![mio](https://docs.rs/affinity/badge.svg)](https://docs.rs/affinity/)
