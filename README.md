@@ -22,7 +22,7 @@ fn bind_even_cores() {
 }
 ```
 
-Complete example [here](https://github.com/elast0ny/affinity-rs/examples/main.rs).
+Complete example [here](https://github.com/elast0ny/affinity-rs/blob/master/examples/main.rs).
 
 ## Features
 
