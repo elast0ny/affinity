@@ -1,0 +1,24 @@
+[package]
+name = "affinity"
+description = "Provides a consistent way to set core affinity for currently running threads and processes"
+version = "0.1.0"
+authors = ["ElasT0ny <elast0ny00@gmail.com>"]
+edition = "2018"
+license = "MIT OR Apache-2.0"
+
+#Extra fields for crates.io
+readme = "README.md"
+documentation = "https://docs.rs/affinity"
+repository  = "https://github.com/elast0ny/affinity-rs"
+keywords = ["affinity", "cpu", "core", "thread", "process"]
+categories = ["api-bindings","os"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cfg-if = "0.*"
+num_cpus = "1.*"
+
+[target.'cfg(any(target_os = "linux", target_os = "macos"))'.dependencies]
+libc = "0.*"
+errno = "0.*"
