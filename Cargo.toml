@@ -16,8 +16,8 @@ categories = ["api-bindings","os"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-cfg-if = "0.*"
-num_cpus = "1.*"
+cfg-if = "1"
+num_cpus = "1"
 
 [target.'cfg(any(target_os = "linux", target_os = "macos"))'.dependencies]
 libc = "0.*"
