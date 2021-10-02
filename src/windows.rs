@@ -55,7 +55,7 @@ pub fn get_process_affinity() -> Result<Vec<usize>> {
                     affinity.push(cur_core);
                 }
                 cur_core += 1;
-                cur_mask = cur_mask << 1;
+                cur_mask <<= 1;
             }
         }
         Err(last_error) => {
@@ -116,7 +116,7 @@ pub fn get_thread_affinity() -> Result<Vec<usize>> {
                         affinity.push(cur_core);
                     }
                     cur_core += 1;
-                    cur_mask = cur_mask << 1;
+                    cur_mask <<= 1;
                 }
 
                 break;
@@ -132,7 +132,7 @@ pub fn get_thread_affinity() -> Result<Vec<usize>> {
                 }
 
                 // Try the next core
-                cur_mask = cur_mask << 1;
+                cur_mask <<=1;
                 continue;
             }
         };
