@@ -1,7 +1,7 @@
 //! This crate provides a consistent way to set core affinity for currently running threads and processes.
-//! 
+//!
 //! ## Usage
-//! 
+//!
 //! ```rust
 //! use affinity::*;
 //! fn bind_even_cores() {
@@ -15,11 +15,11 @@
 //!     // Output : "Current thread affinity : [0, 2, 4, 6]"
 //! }
 //! ```
-//! 
-//! See 
-//! 
+//!
+//! See
+//!
 //! ## Features
-//! 
+//!
 //! - Bind to multiple cores
 //! - Return list of currently bound cores
 //! - Reliably get number of cores (uses [num_cpus](https://crates.io/crates/num_cpus))
