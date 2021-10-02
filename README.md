@@ -1,8 +1,9 @@
 # Affinity
-
+[![Build Status](https://github.com/elast0ny/affinity-rs/workflows/build/badge.svg)](https://github.com/elast0ny/affinity-rs/actions?query=workflow%3Abuild)
 [![crates.io](https://img.shields.io/crates/v/affinity.svg)](https://crates.io/crates/affinity)
 [![mio](https://docs.rs/affinity/badge.svg)](https://docs.rs/affinity/)
-![Lines of Code](https://tokei.rs/b1/github/elast0ny/affinity-rs)
+[![Lines of Code](https://tokei.rs/b1/github/elast0ny/affinity-rs?category=code)](https://tokei.rs/b1/github/elast0ny/affinity-rs?category=code)
+
 
 This crate provides a consistent way to set core affinity for currently running threads and processes.
 
