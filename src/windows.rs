@@ -132,7 +132,7 @@ pub fn get_thread_affinity() -> Result<Vec<usize>> {
                 }
 
                 // Try the next core
-                cur_mask <<=1;
+                cur_mask <<= 1;
                 continue;
             }
         };
