@@ -20,8 +20,12 @@ pub fn main() -> Result<(), Box<dyn Error>> {
     let cores = (0..get_core_num()).step_by(2).collect::<Vec<usize>>();
     println!("Binding thread to cores : {:?}", &cores);
     set_thread_affinity(&cores)?;
-    println!("\tCurrent thread affinity : {:?}", get_thread_affinity()?);
+
+    let bound_cores = get_thread_affinity()?;
+    println!("\tCurrent thread affinity : {:?}", bound_cores);
     println!("\tTotal cores : {}", get_core_num());
+
+    assert_eq!(bound_cores, cores.as_slice());
 
     #[cfg(target_os = "windows")]
     bind_process()?;
