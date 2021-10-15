@@ -1,12 +1,10 @@
 use crate::Result;
 use ::libc::*;
-use std::mem::{size_of, MaybeUninit};
+use std::mem::{zeroed, size_of, MaybeUninit};
 
 pub fn set_thread_affinity(core_ids: &[usize]) -> Result<()> {
-    #[allow(clippy::uninit_assumed_init)]
-    let mut set: cpu_set_t = unsafe { MaybeUninit::uninit().assume_init() };
+    let mut set: cpu_set_t = unsafe { zeroed() };
     unsafe {
-        CPU_ZERO(&mut set);
         for core_id in core_ids {
             CPU_SET(*core_id, &mut set);
         }
@@ -23,9 +21,7 @@ pub fn set_thread_affinity(core_ids: &[usize]) -> Result<()> {
 
 pub fn get_thread_affinity() -> Result<Vec<usize>> {
     let mut affinity = Vec::new();
-    #[allow(clippy::uninit_assumed_init)]
-    let mut set: cpu_set_t = unsafe { MaybeUninit::uninit().assume_init() };
-    unsafe { CPU_ZERO(&mut set) };
+    let mut set: cpu_set_t = unsafe { zeroed() };
 
     if let Err(e) = _sched_getaffinity(0, size_of::<cpu_set_t>(), &mut set) {
         return Err(From::from(format!(
