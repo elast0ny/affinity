@@ -1,6 +1,6 @@
 use crate::Result;
 use ::libc::*;
-use std::mem::{zeroed, size_of, MaybeUninit};
+use std::mem::{size_of, zeroed};
 
 pub fn set_thread_affinity(core_ids: &[usize]) -> Result<()> {
     let mut set: cpu_set_t = unsafe { zeroed() };
