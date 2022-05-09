@@ -48,17 +48,17 @@ The following text may be helpful.
 
 From the file <Kernel/thread_policy.h>
 
-This policy is experimental.
-
-This may be used to express affinity relationships between threads in
-the task. Threads with the same affinity tag will be scheduled to
-share an L2 cache if possible. That is, affinity tags are a hint to
-the scheduler for thread placement.
-
-The namespace of affinity tags is generally local to one task.
-However, a child task created after the assignment of affinity tags by
-its parent will share that namespace. In particular, a family of
-forked processes may be created with a shared affinity namespace.
+> This policy is experimental.
+> 
+> This may be used to express affinity relationships between threads in
+> the task. Threads with the same affinity tag will be scheduled to
+> share an L2 cache if possible. That is, affinity tags are a hint to
+> the scheduler for thread placement.
+> 
+> The namespace of affinity tags is generally local to one task.
+> However, a child task created after the assignment of affinity tags by
+> its parent will share that namespace. In particular, a family of
+> forked processes may be created with a shared affinity namespace.
 
 
 ## License
