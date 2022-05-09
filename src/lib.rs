@@ -39,6 +39,9 @@ cfg_if::cfg_if! {
     } else if #[cfg(target_os = "linux")] {
         mod linux;
         use linux as os;
+    } else if #[cfg(target_os = "macos")] {
+        mod macos;
+        use macos as os;
     } else {
         unimplemented!("This crate does not support your OS yet !");
     }
